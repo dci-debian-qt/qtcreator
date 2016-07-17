@@ -1,9 +1,9 @@
-qtcreator (4.0.2-1~bpo8+1) UNRELEASED; urgency=medium
+qtcreator (4.0.2-1~bpo8+1) jessie-backports; urgency=medium
 
   * Upload to jessie-backports.
   * Remove clang support as jessie[-backports] lacks libclang-3.6-dev.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 13 Jul 2016 21:30:46 -0300
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sat, 16 Jul 2016 21:18:24 -0300
 
 qtcreator (4.0.2-1) unstable; urgency=medium
 
