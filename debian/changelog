@@ -1,3 +1,9 @@
+qtcreator (4.3.0-0neon) UNRELEASED; urgency=medium
+
+  * New release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 31 May 2017 11:33:46 +0100
+
 qtcreator (4.2.0-1) unstable; urgency=medium
 
   * New upstream version
