@@ -1,8 +1,9 @@
-qtcreator (4.3.1-0neon) UNRELEASED; urgency=medium
+qtcreator (5.9.2-0neon) UNRELEASED; urgency=medium
 
   * New release
+  * New release
 
- -- Jonathan Riddell <jr@jriddell.org>  Fri, 30 Jun 2017 15:04:17 +0100
+ -- Jonathan Riddell <jr@jriddell.org>  Fri, 10 Nov 2017 11:41:39 +0000
 
 qtcreator (4.2.0-1) unstable; urgency=medium
 
