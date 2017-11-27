@@ -1,9 +1,38 @@
-qtcreator (5.9.2-0neon) UNRELEASED; urgency=medium
+qtcreator (4.3.1-2~) UNRELEASED; urgency=medium
 
-  * New release
-  * New release
+  * New revision
+  * Update uploaders list as requested by MIA team (Closes: #879427)
 
- -- Jonathan Riddell <jr@jriddell.org>  Fri, 10 Nov 2017 11:41:39 +0000
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 31 Oct 2017 18:05:23 +0100
+
+qtcreator (4.3.1-1) unstable; urgency=medium
+
+  * New upstream version (closes: #866846)
+    + Fix wizards not to overwrite existing files
+    + Fix memory leak in code completion
+    + Fix crash when requesting refactoring on invalid C++ code
+  * Remove qtscript5-private-dev as a BuildDepend
+  * Bump QBS dependency to 1.8.1
+  * remove_libexec.diff: refreshed
+  * fix_documentation_path.diff: re-add. We are putting compiled
+    documentation in compiled directory instead of human readable
+    documentation directory
+  * Install HTML version of the documentation for both QtCreator
+    end user and the plugin developer.
+  * Remove qtcreator.desktop in favour of upstream version
+  * Use dh_missing instead of deprecated dh_install --fail-missing
+
+ -- Adam Majer <adamm@zombino.com>  Tue, 11 Jul 2017 20:16:42 +0200
+
+qtcreator (4.3.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-version to 4.0.0.
+  * Refresh patches and remove fix_documentation_path.diff as it's no longer
+    needed.
+  * Add my name to Uploaders.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 01 Jun 2017 20:41:24 -0500
 
 qtcreator (4.2.0-1) unstable; urgency=medium
 

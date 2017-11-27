@@ -5,10 +5,8 @@ Description: Fix piling up of Qt configurations.
 Last-Update: 2015-11-02
 Forwarded: no
 
-Index: qt-creator-opensource-src-4.3.0/src/plugins/qtsupport/qtversionmanager.cpp
-===================================================================
---- qt-creator-opensource-src-4.3.0.orig/src/plugins/qtsupport/qtversionmanager.cpp
-+++ qt-creator-opensource-src-4.3.0/src/plugins/qtsupport/qtversionmanager.cpp
+--- a/src/plugins/qtsupport/qtversionmanager.cpp
++++ b/src/plugins/qtsupport/qtversionmanager.cpp
 @@ -445,7 +445,7 @@ static void updateSystemQt()
  
      QMap<QString, int> currentAutoVersions;
@@ -18,10 +16,8 @@ Index: qt-creator-opensource-src-4.3.0/src/plugins/qtsupport/qtversionmanager.cp
              currentAutoVersions.insert(i.value()->qmakeCommand().toString(), i.key());
          }
      }
-Index: qt-creator-opensource-src-4.3.0/src/libs/utils/buildablehelperlibrary.cpp
-===================================================================
---- qt-creator-opensource-src-4.3.0.orig/src/libs/utils/buildablehelperlibrary.cpp
-+++ qt-creator-opensource-src-4.3.0/src/libs/utils/buildablehelperlibrary.cpp
+--- a/src/libs/utils/buildablehelperlibrary.cpp
++++ b/src/libs/utils/buildablehelperlibrary.cpp
 @@ -82,8 +82,15 @@ FileName BuildableHelperLibrary::findSys
  
          if (dir.exists(qmake)) {

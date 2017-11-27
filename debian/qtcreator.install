@@ -1,5 +1,4 @@
-debian/qtcreator-icon-32x32.xpm usr/share/pixmaps/
-usr/bin/*
+usr/bin/qtcreator
 usr/lib/*/qtcreator/*
 usr/share/applications/org.qt-project.qtcreator.desktop
 usr/share/metainfo/org.qt-project.qtcreator.appdata.xml
