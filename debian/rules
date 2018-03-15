@@ -15,13 +15,18 @@ export QMAKE_CXXFLAGS_DEBUG := $(CXXFLAGS)
 export QMAKE_LFLAGS_RELEASE := $(LDFLAGS)
 export QMAKE_LFLAGS_DEBUG := $(LDFLAGS)
 export QT_SELECT := qt5
-export LLVM_INSTALL_DIR := $(shell if [ -d /usr/lib/llvm-3.9 ]; then echo /usr/lib/llvm-3.9; fi)
+
+LLVM_PREFIX := $(shell grep LLVM_PREFIX /usr/include/llvm/Config/llvm-config.h | sed 's/.*\(\/usr\/lib\/llvm-[0-9].[0-9]\).*/\1/g')
+
+ifneq ($(LLVM_PREFIX),)
+    export LLVM_INSTALL_DIR := $(LLVM_PREFIX)
+endif
 
 # Upstream changelog
 upstream_changes := $(wildcard dist/changes-*)
 
 %:
-	dh $@ --parallel --builddirectory=builddir
+	dh $@ --builddirectory=builddir
 
 override_dh_auto_configure:
 	mkdir -p builddir
@@ -37,7 +42,7 @@ override_dh_auto_configure:
 		PREFIX=/usr/ \
 		LLVM_INSTALL_DIR="$(LLVM_INSTALL_DIR)" \
 		CONFIG+=disable_external_rpath \
-		$(CURDIR) IDE_LIBRARY_BASENAME=lib/$(DEB_HOST_MULTIARCH) IDE_PACKAGE_MODE=1 USE_SYSTEM_BOTAN=1 $(extra_configure_opts)
+		$(CURDIR) IDE_LIBRARY_BASENAME=lib/$(DEB_HOST_MULTIARCH) IDE_PACKAGE_MODE=1 $(extra_configure_opts)
 
 override_dh_auto_install:
 ifneq (,$(filter qtcreator-doc, $(shell dh_listpackages)))
