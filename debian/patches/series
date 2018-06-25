@@ -1,4 +1,7 @@
 # Upstream patches
+botan2.wip.patch
+improve_appstream_metadata.patch
+arch_support_refactor.patch
 
 # Debian patches.
 rpath_nonlinux.diff
@@ -6,7 +9,5 @@ always_autotect_qt_versions
 fix_qt_version_autodetection.diff
 remove_libexec.diff
 fix_documentation_path.diff
+botan2.debian.patch
 
-# Unused until creator switches to botan 2.
-#botan_system_lib.diff
-#missing_header.diff

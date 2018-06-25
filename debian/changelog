@@ -1,3 +1,105 @@
+qtcreator (4.6.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 15 Jun 2018 18:12:29 -0500
+
+qtcreator (4.6.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Make qtcreator suggest valgrind (Closes: #881542).
+  * Backport upstream patch to improve AppStrem metadata (Closes: 897901).
+  * Refresh patches.
+  * Create arch_support_refactor.patch backporting various commits that
+    improve arch/OS support, adding for example the xtensa-esp32 arch.
+  * Remove empty from_header_to_body.diff file.
+  * Fix typo in debian/copyright.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 09 May 2018 14:28:47 -0300
+
+qtcreator (4.6.0-3) unstable; urgency=medium
+
+  * Fix clang model plugin build (Closes: 895677):
+    - Build depend upon llvm-6.0-dev on all archs.
+    - Once again pass LLVM_INSTALL_DIR to the config script. In Debian
+      llvm-config is suffixed by the LLVM version, so the correct path
+      is not detected without it.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 18 Apr 2018 15:08:16 -0300
+
+qtcreator (4.6.0-2) unstable; urgency=medium
+
+  * Qt Creator now has a better heuristic for detecting LLVM, so it's not
+    needed to explicitely tell it where is it installed. Thanks James Cowgill
+    for pointing me in the right direction.
+    - Make libclang-6.0-dev a dependency on all archs.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 10 Apr 2018 21:18:30 -0300
+
+qtcreator (4.6.0-1) unstable; urgency=medium
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Use Helmut Grohne's patch to simplify debian/rules and allow qtcreator to
+    be crossbuilt (Closes: #893508).
+
+  [ Simon Quigley ]
+  * New upstream release.
+  * Run wrap-and-sort.
+  * Confirm the multi-arch hinter's pointers and make qtcreator-data and
+    qtcreator-doc Multi-Arch: foreign.
+  * Bump Standards-version to 4.1.4, no changes needed.
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Bump qbs build dependency to 1.11, required by this release.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 10 Apr 2018 10:28:29 -0300
+
+qtcreator (4.5.2-3) unstable; urgency=medium
+
+  * Update libclang dependency to 6.0 (closes: #893402)
+
+ -- Adam Majer <adamm@zombino.com>  Sun, 18 Mar 2018 19:10:54 +0100
+
+qtcreator (4.5.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Switch the kdelibs5-data suggest to kate-data, since the latter is where
+    the kate syntax definitions are; unfortunately they are the kde4 versions,
+    as the KF5 syntax-highlighting embeds its own as Qt resources.
+  * Use https in the watch file.
+  * Move desktop file, and appdata file from qtcreator-data to qtcreator, as
+    they must be together with the executable they refer to
+    - add proper breaks/replaces
+  * Add the zlib1g-dev build dependency: apparently LLVM/Clang 3.9 exposes -lz
+    as dependency for its libraries, and the -dev packages do not depend on it.
+  * Remove the unused ${perl:Depends} substvar from qtcreator-data.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 18 Mar 2018 10:23:36 +0100
+
+qtcreator (4.5.2-1) unstable; urgency=medium
+
+  [ Simon Quigley ]
+  * New upstream release. (closes: #893207)
+  * Bump debhelper compat to 11, no changes needed.
+  * Bump Standards-version to 4.1.3, no changes needed.
+  * Fix insecure-copyright-format-uri.
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Remove botan patches. We can now use USE_SYSTEM_BOTAN as soon as botan2
+    hits the archive. Thanks Christian Kandeler for the pointer!
+  * Switch Vcs-[Git Browser] to salsa.debian.org.
+
+  [ Alexander Volkov ]
+  * Revert "Export LLVM_INSTALL_DIR without harcoding the version." since
+    this method doesn't work with libclang-3.9-dev and llvm-3.9-dev
+    build dependencies. (closes: #889984, #888895)
+
+  [ Adam Majer ]
+  * Enable USE_SYSTEM_BOTAN again. (botan2.wip.patch, botan2.debian.patch)
+  * Update Qt minimum version dependency to 5.6.2
+
+ -- Adam Majer <adamm@zombino.com>  Sat, 17 Mar 2018 20:12:32 +0100
+
 qtcreator (4.4.1-0neon) UNRELEASED; urgency=medium
 
   * New version
