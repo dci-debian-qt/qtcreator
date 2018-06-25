@@ -100,19 +100,56 @@ qtcreator (4.5.2-1) unstable; urgency=medium
 
  -- Adam Majer <adamm@zombino.com>  Sat, 17 Mar 2018 20:12:32 +0100
 
-qtcreator (4.4.1-0neon) UNRELEASED; urgency=medium
+qtcreator (4.5.0-3) unstable; urgency=medium
 
-  * New version
+  * Switch back to using the embedded botan's code. Version 1.10 will get
+    removed from the archive. QTCREATORBUG-19745 was filed against upstream
+    to improve this situation (Closes: #889558).
+    - Remove botan build dependency.
+  * Refresh patches.
 
- -- Jonathan Riddell <jr@jriddell.org>  Mon, 27 Nov 2017 16:53:34 +0000
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 06 Feb 2018 15:41:41 -0300
 
-qtcreator (4.3.1-2ubuntu1~) UNRELEASED; urgency=medium
+qtcreator (4.5.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fix FTBFS on armhf. (Closes: #886820)
+    - Remove hack to build some files with -O1.
+      Thanks to Adrian Bunk for testing.
+  * Build-depend on qml-module-qtquick-controls to satisfy the check in
+    src/plugins/plugins.pro.
+    - Thanks to Dmitry Shachnev.
+  * Build-depend libclang and llvm 3.9 instead of the metapackage.
+    - qtcreator only works with version 3.9.
+
+ -- Felix Geyer <fgeyer@debian.org>  Mon, 29 Jan 2018 22:54:46 +0100
+
+qtcreator (4.5.0-1) unstable; urgency=medium
+
+  [ Adam Majer ]
+  * Enable clang code plugin on i386 (closes: #877814)
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * New upstream release. (closes: #875863)
+  * Bump QBS build dependency to >= 1.10, required by the source.
+
+ -- Adam Majer <adamm@zombino.com>  Thu, 28 Dec 2017 00:41:30 +0100
+
+qtcreator (4.3.1-2) unstable; urgency=medium
 
   [ Maximiliano Curia ]
   * New revision
   * Update uploaders list as requested by MIA team (Closes: #879427)
 
- -- Maximiliano Curia <maxy@debian.org>  Tue, 31 Oct 2017 18:05:23 +0100
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Switch to unversioned llvm-dev and libclang-dev, see if we can keep this
+    dependencies this way (Closes: #873414).
+    - Export LLVM_INSTALL_DIR without harcoding the version.
+  * Switch to compat 10 which uses parallel building by default.
+    - Depend on debhelper >= 10.
+  * Update Standards-Version to 4.1.1, no changes required.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sun, 26 Nov 2017 16:36:46 -0300
 
 qtcreator (4.3.1-1) unstable; urgency=medium
 
