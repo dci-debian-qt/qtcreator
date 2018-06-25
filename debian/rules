@@ -12,7 +12,7 @@ export LLVM_INSTALL_DIR := "/usr/lib/llvm-5.0"
 upstream_changes := $(wildcard dist/changes-*)
 
 %:
-	dh $@ --builddirectory=builddir
+	dh $@ --parallel --builddirectory=builddir
 
 override_dh_auto_configure:
 	mkdir -p builddir
