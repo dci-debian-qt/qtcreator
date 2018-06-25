@@ -16,7 +16,7 @@ upstream_changes := $(wildcard dist/changes-*)
 
 override_dh_auto_configure:
 	mkdir -p builddir
-	qmake \
+	cd builddir; qmake \
 		-recursive \
 		QBS_INSTALL_DIR=/usr \
 		LLVM_INSTALL_DIR="$(LLVM_INSTALL_DIR)" \
