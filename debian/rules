@@ -15,6 +15,7 @@ upstream_changes := $(wildcard dist/changes-*)
 	dh $@ --builddirectory=builddir
 
 override_dh_auto_configure:
+	mkdir -p builddir
 	qmake \
 		-recursive \
 		QBS_INSTALL_DIR=/usr \
